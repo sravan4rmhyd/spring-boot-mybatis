@@ -4,13 +4,13 @@ public class Employee {
 
 	private int id;
 	private String email;
-	private String userName;
+	private String empName;
 	
 	public Employee() {}
 
-    public Employee(String email, String userName) {
+    public Employee(String email, String empName) {
         this.email = email;
-        this.userName = userName;
+        this.empName = empName;
     }
 
     public int getId() {
@@ -28,13 +28,13 @@ public class Employee {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	public String getUserName() {
-		return userName;
+
+	public String getEmpName() {
+		return empName;
 	}
-	
-	public void setUserName(String userName) {
-		this.userName = userName;
+
+	public void setEmpName(String empName) {
+		this.empName = empName;
 	}
 	
 }
