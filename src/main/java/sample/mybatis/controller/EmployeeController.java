@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import sample.mybatis.domain.Employee;
+import sample.mybatis.domain.EmployeeResponse;
 import sample.mybatis.service.EmployeeService;
 
 @RestController
@@ -18,7 +19,12 @@ public class EmployeeController {
 	private EmployeeService employeeService;
 
 	@RequestMapping(value = "/getEmployee", method = RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<Employee> getEmployees(@RequestParam(defaultValue="1") int pageNo, @RequestParam(defaultValue="10") int pageSize) {
-		return employeeService.getEmployees(pageNo, pageSize);
+	public EmployeeResponse getEmployees(@RequestParam(defaultValue="1") int pageNo, @RequestParam(defaultValue="10") int pageSize) {
+		List<Employee> employees= employeeService.getEmployees(pageNo, pageSize);
+		int totalCount = employeeService.getEmployeeCount();
+		EmployeeResponse response = new EmployeeResponse();
+		response.setEmployees(employees);
+		response.setTotalRecord(totalCount);
+		return response;
 	}
 }

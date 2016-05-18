@@ -26,4 +26,8 @@ public class EmployeeService {
     	int startIndex =(pageNo-1)*pageSize;
     	return employeeMapper.getEmployees(startIndex, pageSize);
     }
+    public int getEmployeeCount()
+    {
+    	return employeeMapper.getEmployeeCount();
+    }
 }

@@ -15,4 +15,6 @@ public interface EmployeeMapper {
     public int addEmployee(Employee employee);
     @Select("select * from Employee LIMIT #{0},#{1} ")
     public List<Employee> getEmployees(int startIndex,int pagesize);
+    @Select("select count(1) from Employee")
+    public int getEmployeeCount();
 }
