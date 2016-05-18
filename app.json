@@ -1,0 +1,7 @@
+{
+  "name": "Spring Boot mybatis Demo",
+  "description": "This is a small demo application for Spring Boot mybatis application on Heroku.",
+  "repository": "https://github.com/sravan4rmhyd/spring-boot-mybatis-sample",
+  "image": "heroku/java",
+  "addons": [ "cleardb" ]
+}
